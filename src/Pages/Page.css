@@ -1,0 +1,294 @@
+/* Add this CSS to your global styles or import it into your component */
+/* HOME */
+.video-container {
+  top: 5%;
+  right: 2%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio for responsive video */
+  transform: scale(0.6)
+  
+}
+
+.about-container {
+  top: 5%;
+  right: 2%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio for responsive video */
+  transform: scale(0.6);
+  flex-direction: column;
+  
+}
+
+.class-container {
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+  padding-top: 56.25%; /* 16:9 aspect ratio for responsive video */
+  width: 700px;
+  
+}
+
+.screenshot-container {
+  top: 40%;
+  right: 2%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio for responsive video */
+  transform: scale(0.6);
+  flex-direction: column;
+  
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.image-container {
+  flex: 1; /* Equal width for both containers */
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 400px;
+
+}
+
+.image-container_img {
+  width: 100%; /* Ensure the image fills its container */
+  height: 100%; /* Ensure the image fills its container */
+
+}
+
+.buttons-container_img {
+  width: 100%; /* Ensure the image fills its container */
+  height: 100%; /* Ensure the image fills its container */
+  border: 1px solid aliceblue; /* Border with color and width */
+  cursor: pointer;
+
+}
+
+.buttons-container button {
+  margin-bottom: 1px;
+  font-size: inherit; /* Mantém o tamanho da fonte do elemento pai */
+  font-family: inherit; /* Mantém a família da fonte do elemento pai */
+  background: none; /* Remove o fundo */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Divider-img {
+  position: relative;
+  top:-15%;
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+.Screenshot-img {
+  position: relative;
+  top:-15%;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container h2 {
+  font-size: 35px;
+  align-items: center;
+  text-align: center;
+}
+.about-container p {
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.screenshot-container h2 {
+  font-size: 35px;
+  align-items: center;
+  text-align: center;
+}
+
+.screenshot-container h3 {
+  font-size: 25px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Add this CSS to your global styles or import it into your component */
+/* DOWNLOAD */
+.download-container {
+  position: absolute;
+  flex-direction: column;
+  align-items: center; /* Align items horizontally to the center */
+  justify-content: center; /* Align items vertically to the center */
+  width: 100%;
+  transform: scale(0.6);
+  flex-direction: column;
+  padding-bottom: 80%;
+  
+}
+
+.download-container h2 {
+  font-size: 35px;
+  align-items: center;
+  text-align: center;
+}
+
+.download-container p {
+  font-size: 25px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-container button {
+ 
+  position: relative;
+  background: none; /* Remove o fundo */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+  width: 100%; /* Adjust width as needed */
+  height: 100%; /* Maintain aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-image {
+  width: 100%; /* Ensure the image fills its container */
+  height: 100%; /* Ensure the image fills its container */
+
+}
+
+.system-container {
+  top: 120px;
+  position: relative;
+  flex-direction: column;
+  align-items: center; /* Align items horizontally to the center */
+  justify-content: center; /* Align items vertically to the center */
+  width: 100%;
+}
+
+.system-container h2 {
+  font-size: 35px;
+  align-items: center;
+  text-align: center;
+}
+
+.black-column {
+  width: 48%; /* Adjust the width of the black column */
+  float: left; /* Align the black column to the left */
+}
+
+.red-column {
+  width: 48%; /* Adjust the width of the red column */
+  float: right; /* Align the red column to the right */
+}
+
+.black-text {
+  color: black; /* Black text color */
+}
+
+.red-text {
+  color: red; /* Red text color */
+}
+
+/* Add this CSS to your global styles or import it into your component */
+/* GAME */
+
+.navbargame-container {
+  top: 10%;
+  right: 2%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.navbargame-container button {
+  margin-bottom: 1px;
+  font-size: inherit; /* Mantém o tamanho da fonte do elemento pai */
+  font-family: inherit; /* Mantém a família da fonte do elemento pai */
+  background: none; /* Remove o fundo */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+.navbargame-container button:hover {
+
+  text-shadow: 1px 1px 5px rgb(130, 130, 130), 0 0 1em rgb(109, 48, 85), 0 0 0.2em rgb(19, 19, 62);
+ 
+}
+/* Add this CSS to your global styles or import it into your component */
+/* REGISTER */
+
+.register-container {
+  top: 10%;
+  right: 2%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Add some space between the buttons */
+  
+}
+
+.form-column {
+  
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.form-column label {
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.form-column input[type="text"],
+.form-column input[type="password"],
+.form-column input[type="email"] {
+  width: 200px;
+}
+
+.form-column button {
+  width: 100px;
+}

@@ -1,0 +1,148 @@
+.header_container {
+  position:relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%,0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 100%; /* Adjust width as needed */
+
+  height: auto; /* Automatically adjust height based on the width */
+}
+.header_img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.header_container_btn{
+  top: 5px;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Adicionando flexbox */
+  z-index: 8;
+  
+  @media screen and (max-width: 650px){
+    font-size: 12px;
+  }
+  @media screen and (max-width: 480px){
+    font-size: 8px;
+  }
+  @media screen and (max-width: 380px){
+    font-size: 6px;
+  }
+
+}
+
+.header_container li {
+  color: aliceblue;
+  position: relative; /* Adicionando position: relative; */
+  margin-right: 160px;
+  left: 80px;
+  top: 5px;
+}
+.middle_container {
+  position:relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  z-index: 2;
+  width: 100%; /* Adjust width as needed */
+
+}
+.middle_img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo-container {
+  position:absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%,50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+}
+
+.logo-img {
+  max-width: 900px;
+  max-height: 200px;
+
+  @media screen and (max-width:902px) {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+.nav_container {
+  position:relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  z-index: 2;
+  width: 100%; /* Adjust width as needed */
+
+}
+
+.nav_img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.btn_container {
+  position:absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%,50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+}
+
+.backgroundp_container {
+  position:relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  z-index: 2;
+  width: 100%; /* Adjust width as needed */
+
+}
+.backgroundp_container_img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.footer_container {
+  position:relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  z-index: 2;
+  width: 100%; /* Adjust width as needed */
+
+}
+.footer_img {
+  max-width: 100%;
+  max-height: 100%;
+}

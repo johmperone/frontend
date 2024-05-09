@@ -1,0 +1,77 @@
+.modal {
+  position: absolute; /* Tornar o modal estático */
+  width: 100%;
+  height: 100%;
+  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6; /* Defina um z-index alto para garantir que o modal fique em cima das outras divs */
+  overflow: -moz-hidden-unscrollable;
+  
+
+}
+
+.modal-content {
+  position: absolute; /* Tornar o modal estático */
+  width: 760px;
+  height: 1300px;
+  top: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6; /* Defina um z-index alto para garantir que o modal fique em cima das outras divs */
+  overflow: -moz-hidden-unscrollable;
+  
+}
+
+@media screen and (max-width: 915px){
+
+}
+
+@media screen and (max-width: 800px){
+
+}
+
+@media screen and (max-width: 480px){
+  .modal{
+  transform: scale(0.5);
+  margin-top: -180px;
+ }
+ .modal-content{
+  
+
+ }
+}
+@media screen and (max-width: 414px){
+  .modal{
+    transform: scale(0.5);
+    margin-top: -165px;
+    
+   }
+   .modal-content{
+    width: 700px;
+    height: 1200px;
+    margin-left: 50px;
+   }
+}
+
+@media screen and (max-width: 375px){
+  .modal{
+    transform: scale(0.4);
+    margin-top: -135px;
+   }
+   .modal-content{
+    width: 800px;
+    height: 1300px;
+    margin-left: 50px;
+   }
+}
+
+.PaperMiddle-img {
+  width: 100%; /* Definindo a largura em relação ao contêiner pai */
+  height: 100%; /* Definindo a altura em relação ao contêiner pai */
+  max-width: 100%; /* Garantindo que a largura máxima não ultrapasse o contêiner pai */
+  max-height: 100%; /* Garantindo que a altura máxima não ultrapasse o contêiner pai */
+}
