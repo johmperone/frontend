@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/Background.tsx", "src/Logo.tsx", "old/Nav.tsx"  ]
+, "src/Background.tsx", "src/Logo.tsx", "old/Nav.tsx", "public"  ]
 }
