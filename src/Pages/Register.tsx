@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, ChangeEvent, FormEvent } from 'reac
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
+// Interfaces
 interface FormData {
   name: string;
   email: string;
@@ -14,7 +15,9 @@ interface PasswordData {
   confirmNewPassword: string;
 }
 
+// Main Component
 const Game: React.FC = () => {
+  // State variables
   const [activeDiv, setActiveDiv] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
@@ -26,17 +29,20 @@ const Game: React.FC = () => {
     confirmNewPassword: '',
   });
 
+  // Refs for form inputs
   const loginRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const passwordCRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const verifyCodeRef = useRef<HTMLInputElement>(null);
 
+  // Handle button clicks to show different forms
   const handleButtonClick = (divNumber: number) => {
     console.log("Button clicked:", divNumber);
     setActiveDiv(divNumber);
   };
 
+  // Handle form reset
   const handleReset = () => {
     if (loginRef.current) loginRef.current.value = '';
     if (passwordRef.current) passwordRef.current.value = '';
@@ -51,7 +57,8 @@ const Game: React.FC = () => {
     });
   };
 
-  const handleRegister = async (e: React.FormEvent) => {
+  // Handle registration form submission
+  const handleRegister = async (e: FormEvent) => {
     e.preventDefault();
     if (
       !loginRef.current?.value ||
@@ -74,7 +81,7 @@ const Game: React.FC = () => {
       pwd: passwordRef.current.value,
       pw2: passwordCRef.current.value,
       email: emailRef.current.value,
-      refcode: verifyCodeRef.current?.value || null, // Set to null if empty
+      refcode: verifyCodeRef.current?.value || null,
       captcha: captchaValue,
     };
 
@@ -92,16 +99,19 @@ const Game: React.FC = () => {
     }
   };
 
+  // Handle change events for registration form inputs
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Handle change events for password form inputs
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setPasswordData({ ...passwordData, [name]: value });
   };
 
+  // Handle password recovery form submission
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!captchaValue) {
@@ -121,6 +131,7 @@ const Game: React.FC = () => {
     }
   };
 
+  // Handle change password form submission
   const handleChangePassword = async (e: FormEvent) => {
     e.preventDefault();
     if (!captchaValue) {
@@ -153,9 +164,10 @@ const Game: React.FC = () => {
     }
   };
 
+  // Set initial active div when component mounts
   useEffect(() => {
-    setActiveDiv(1); // Open Div 1 when component mounts
-  }, []); // Empty dependency array ensures the effect runs only once
+    setActiveDiv(3);
+  }, []);
 
   return (
     <div className="modal-content">

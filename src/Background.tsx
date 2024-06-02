@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Home from './Pages/Home';
 import Game from './Pages/Game';
 import Rules from './Pages/Rules';
@@ -25,16 +26,68 @@ import Backgroundp from './img/fundo_06.webp'
 import Footer from './img/footer.webp' 
 import PaperMiddle from './img/paper_middler.webp' 
 
-
 const Background: React.FC = () => {
-  const [showModal] = useState(true); // State to control modal visibility
-  const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [showModal, setShowModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState<number | null>(null);
 
+  useEffect(() => {
+    // Set the initial page based on the path
+    switch (location.pathname) {
+      case '/home':
+        setCurrentPage(1);
+        setShowModal(true);
+        break;
+      case '/game':
+        setCurrentPage(2);
+        setShowModal(true);
+        break;
+      case '/rules':
+        setCurrentPage(3);
+        setShowModal(true);
+        break;
+      case '/download':
+        setCurrentPage(4);
+        setShowModal(true);
+        break;
+      case '/donate':
+        setCurrentPage(5);
+        setShowModal(true);
+        break;
+      case '/ranking':
+        setCurrentPage(6);
+        setShowModal(true);
+        break;
+      case '/register':
+        setCurrentPage(7);
+        setShowModal(true);
+        break;
+      case '/community':
+        setCurrentPage(8);
+        setShowModal(true);
+        break;
+      default:
+        // If no path matches, default to home
+        setCurrentPage(1);
+        setShowModal(true);
+        navigate('/home');
+        break;
+    }
+  }, [location.pathname, navigate]);
 
-    // Function to handle page change
-    const changePage = (page: number) => {
-      setCurrentPage(page);
-    };
+  // Function to handle page change
+  const changePage = (page: number, path: string) => {
+    setCurrentPage(page);
+    setShowModal(true);
+    navigate(path);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setCurrentPage(null);
+    navigate('/'); // Navigate back to home or the main page
+  };
 
   return (
     <div className="container">
@@ -51,11 +104,12 @@ const Background: React.FC = () => {
       </div>
       <div className="logo-container">
           <img src={logoImage} alt="Logo" className="logo-img" />
-        </div>
-           {/* Modal */}
-           {showModal && (
-          <div className="modal">
-            <div className="modal-content">{/* Conditional rendering based on current page */}
+      </div>
+      {/* Modal */}
+      {showModal && currentPage && (
+        <div className="modal">
+          <div className="modal-content">
+            {/* Conditional rendering based on current page */}
             {currentPage === 1 && <Home />}
             {currentPage === 2 && <Game />}
             {currentPage === 3 && <Rules />}
@@ -63,66 +117,66 @@ const Background: React.FC = () => {
             {currentPage === 5 && <Donate />}
             {currentPage === 6 && <Ranking />}
             {currentPage === 7 && <Register />}
-            {currentPage === 8 && <Community/>}
+            {currentPage === 8 && <Community />}
             {/* Add other modal pages as needed */}
-              <img src={PaperMiddle} alt="Logo" className="PaperMiddle-img" />
-            </div>
+            <img src={PaperMiddle} alt="Logo" className="PaperMiddle-img" />
+            <button onClick={closeModal}>Close</button> {/* Add a button to close the modal */}
           </div>
-        )} 
+        </div>
+      )}
 
-    <div className="nav_container">
-      <img src={Navbar} alt="Header" className="navbar_img" />
-      <div className="btn2">
-        <ul className="menu_btn">
-          <li> 
-            <button onClick={() => changePage(7)}>REGISTER</button>
-          </li>
-          <li>
-          <button onClick={() => changePage(8)}>COMMUNITY</button>
-          </li>
-        </ul>
-      </div>
+      <div className="nav_container">
+        <img src={Navbar} alt="Header" className="navbar_img" />
+        <div className="btn2">
+          <ul className="menu_btn">
+            <li> 
+              <button onClick={() => changePage(7, '/register')}>REGISTER</button> {/* Use changePage with page number and path */}
+            </li>
+            <li>
+              <button onClick={() => changePage(8, '/community')}>COMMUNITY</button>
+            </li>
+          </ul>
+        </div>
 
-      <div className="btn">
+        <div className="btn">
           <img src={Btnplay} alt="Header" className="btn_play" />
           <img src={Btnleft} alt="Header" className="btn_left" />
           <img src={Btnright} alt="Header" className="btn_right" />
           <img src={Morroleft} alt="Header" className="morro_left" />
           <img src={Morroright} alt="Header" className="morro_right" />
-      </div>
+        </div>
 
         <div className="navbar">
-
           <ul className="menu">
             <li>
-            <button onClick={() => changePage(1)}>HOME</button> {/* Add onClick event */}
+              <button onClick={() => changePage(1, '/home')}>HOME</button> {/* Add onClick event */}
             </li>
             <li>
-            <button onClick={() => changePage(2)}>GAME</button>
+              <button onClick={() => changePage(2, '/game')}>GAME</button>
             </li>
             <li>
-            <button onClick={() => changePage(4)}>DOWNLOAD</button>
+              <button onClick={() => changePage(3, '/rules')}>RULES</button>
             </li>
             <li>
-            <button onClick={() => changePage(5)}>DONATE</button>
-              <ul className="sub-menu">
-              </ul>
+              <button onClick={() => changePage(4, '/download')}>DOWNLOAD</button>
             </li>
             <li>
-            <button onClick={() => changePage(6)}>RANKING</button>
+              <button onClick={() => changePage(5, '/donate')}>DONATE</button>
+              <ul className="sub-menu"></ul>
+            </li>
+            <li>
+              <button onClick={() => changePage(6, '/ranking')}>RANKING</button>
             </li>
           </ul>
         </div>
         <img src={Nav} alt="Nav" className="nav_img" />
-
       </div>
       <div className="backgroundp_container">
         <img src={Backgroundp} alt="BackgroundPage" className="nav_img" />
       </div>
       <div className="footer_container">
-      <img src={Footer} alt="Footer" className="footer_img" />
+        <img src={Footer} alt="Footer" className="footer_img" />
       </div>
-
     </div>      
   );
 }
