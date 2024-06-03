@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Home from './Pages/Home';
 import Game from './Pages/Game';
-import Rules from './Pages/Rules';
 import Download from './Pages/Download';
 import Donate from './Pages/Donate';
 import Ranking from './Pages/Ranking';
@@ -43,28 +42,24 @@ const Background: React.FC = () => {
         setCurrentPage(2);
         setShowModal(true);
         break;
-      case '/rules':
+      case '/download':
         setCurrentPage(3);
         setShowModal(true);
         break;
-      case '/download':
+      case '/donate':
         setCurrentPage(4);
         setShowModal(true);
         break;
-      case '/donate':
+      case '/ranking':
         setCurrentPage(5);
         setShowModal(true);
         break;
-      case '/ranking':
+      case '/register':
         setCurrentPage(6);
         setShowModal(true);
         break;
-      case '/register':
-        setCurrentPage(7);
-        setShowModal(true);
-        break;
       case '/community':
-        setCurrentPage(8);
+        setCurrentPage(7);
         setShowModal(true);
         break;
       default:
@@ -112,12 +107,11 @@ const Background: React.FC = () => {
             {/* Conditional rendering based on current page */}
             {currentPage === 1 && <Home />}
             {currentPage === 2 && <Game />}
-            {currentPage === 3 && <Rules />}
-            {currentPage === 4 && <Download />}
-            {currentPage === 5 && <Donate />}
-            {currentPage === 6 && <Ranking />}
-            {currentPage === 7 && <Register />}
-            {currentPage === 8 && <Community />}
+            {currentPage === 3 && <Download />}
+            {currentPage === 4 && <Donate />}
+            {currentPage === 5 && <Ranking />}
+            {currentPage === 6 && <Register />}
+            {currentPage === 7 && <Community />}
             {/* Add other modal pages as needed */}
             <img src={PaperMiddle} alt="Logo" className="PaperMiddle-img" />
             <button onClick={closeModal}>Close</button> {/* Add a button to close the modal */}
@@ -153,9 +147,6 @@ const Background: React.FC = () => {
             </li>
             <li>
               <button onClick={() => changePage(2, '/game')}>GAME</button>
-            </li>
-            <li>
-              <button onClick={() => changePage(3, '/rules')}>RULES</button>
             </li>
             <li>
               <button onClick={() => changePage(4, '/download')}>DOWNLOAD</button>

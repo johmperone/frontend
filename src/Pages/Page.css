@@ -2,7 +2,7 @@
 /* HOME */
 .video-container {
   top: 5%;
-  right: 2%;
+  left: 2%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
 
 .about-container {
   top: 5%;
-  right: 2%;
+  left: 2%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@
 .class-container {
   position: absolute;
   top: 15%;
-  left: 2%;
+  left: 6%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
 
 .screenshot-container {
   top: 40%;
-  right: 2%;
+  left: 2%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -251,7 +251,7 @@
 /* REGISTER */
 
 .register-container {
-  top: 10%;
+  top: 15%;
   right: 2%;
   position: absolute;
   display: flex;

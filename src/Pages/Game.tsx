@@ -27,7 +27,7 @@ const Game: React.FC = () => {
       <button  onClick={() => openDiv(3)}>GAME GUIDE {activeDiv === 3 && "⬇"}</button>
     </div>
       {activeDiv === 1 && (
-        <div className="modal-div">
+        <div className="modal-div1">
           <h2>Weapons Of War Awakening Terms and Conditions</h2>
           <p>
 
@@ -52,7 +52,7 @@ The punishment for a scammer in the game can vary depending on the severity of t
       )}
 
       {activeDiv === 2 && (
-        <div className="modal-div">
+        <div className="modal-div2">
         <h2>Server Info</h2>
         <p>
 
@@ -74,7 +74,7 @@ Communities</p>
       )}
 
       {activeDiv === 3 && (
-                <div className="modal-div">
+                <div className="modal-div3">
                 <h2>Game Guide</h2>
                 <p>
 
