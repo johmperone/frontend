@@ -78,12 +78,6 @@ const Background: React.FC = () => {
     navigate(path);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-    setCurrentPage(null);
-    navigate('/'); // Navigate back to home or the main page
-  };
-
   return (
     <div className="container">
       <div className="header_container">
@@ -114,7 +108,6 @@ const Background: React.FC = () => {
             {currentPage === 7 && <Community />}
             {/* Add other modal pages as needed */}
             <img src={PaperMiddle} alt="Logo" className="PaperMiddle-img" />
-            <button onClick={closeModal}>Close</button> {/* Add a button to close the modal */}
           </div>
         </div>
       )}

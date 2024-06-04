@@ -166,7 +166,7 @@ const Game: React.FC = () => {
 
   // Set initial active div when component mounts
   useEffect(() => {
-    setActiveDiv(3);
+    setActiveDiv(1);
   }, []);
 
   return (
@@ -199,7 +199,7 @@ const Game: React.FC = () => {
                 <input type="email" id="email" name="email" ref={emailRef} required />
               </div>
               <div className="form-column">
-                <label htmlFor="verify">Verify Code:</label>
+                <label htmlFor="verify">Referral Code:</label>
                 <input type="text" id="verify" name="verify" ref={verifyCodeRef} />
               </div>
               <ReCAPTCHA
@@ -221,11 +221,11 @@ const Game: React.FC = () => {
           <div className="register-container">
             <h2>Password Recovery</h2>
             <form onSubmit={handleSubmit}>
-              <div>
+              <div className="form-column" >
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
               </div>
-              <div>
+              <div className="form-column">
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
               </div>
@@ -244,19 +244,19 @@ const Game: React.FC = () => {
           <div className="register-container">
             <h2>Change Password</h2>
             <form onSubmit={handleChangePassword}>
-              <div>
+              <div className="form-column">
                 <label htmlFor="login">Login:</label>
                 <input type="text" id="login" name="login" value={passwordData.login} onChange={handlePasswordChange} required />
               </div>
-              <div>
+              <div className="form-column">
                 <label htmlFor="currentPassword">Current Password:</label>
                 <input type="password" id="currentPassword" name="currentPassword" value={passwordData.currentPassword} onChange={handlePasswordChange} required />
               </div>
-              <div>
+              <div className="form-column">
                 <label htmlFor="newPassword">New Password:</label>
                 <input type="password" id="newPassword" name="newPassword" value={passwordData.newPassword} onChange={handlePasswordChange} required />
               </div>
-              <div>
+              <div className="form-column">
                 <label htmlFor="confirmNewPassword">Confirm New Password:</label>
                 <input type="password" id="confirmNewPassword" name="confirmNewPassword" value={passwordData.confirmNewPassword} onChange={handlePasswordChange} required />
               </div>
