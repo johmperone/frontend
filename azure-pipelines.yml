@@ -68,14 +68,4 @@ stages:
             artifact: drop
             displayName: 'Download Build Artifact'
 
-          - task: AzureRmWebAppDeployment@4
-            inputs:
-              ConnectionType: 'AzureRM'
-              azureSubscription: 'woelements'  # Update with the actual service connection name
-              appType: 'webApp'
-              WebAppName: 'woelements'
-              packageForLinux: '$(Pipeline.Workspace)/drop/drop.zip'
-              RuntimeStack: 'NODE|16-lts'
-              DeploymentType: 'zipDeploy'
-              TakeAppOfflineFlag: true
-            displayName: 'Deploy to Azure Web App'
+
