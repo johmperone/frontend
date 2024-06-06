@@ -1,0 +1,51 @@
+trigger:
+- woelements
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  node_version: '16.x'  # Update to a more recent version if possible
+  appservicedeploy_retrytimeout: 30  # Increase the timeout to 30 minutes (adjust as needed)
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '$(node_version)'
+
+- script: npm install
+  displayName: 'Install dependencies'
+
+- script: npm run build
+  displayName: 'Build the project'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'woelements'  # Update with the actual service connection name
+    appType: 'webApp'
+    WebAppName: 'woelements'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    RuntimeStack: 'NODE|16-lts'  # Update the runtime stack if you're using a newer Node.js version
+    DeploymentType: 'zipDeploy'
+    TakeAppOfflineFlag: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'logs'
+    publishLocation: 'Container'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifactName: 'pipeline-logs'
+    publishLocation: 'pipeline'
