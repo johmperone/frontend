@@ -1,0 +1,67 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- woelements
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  node_version: '16.x'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '$(node_version)'
+
+    - script: npm install
+      displayName: 'Install dependencies'
+
+    - script: npm run build
+      displayName: 'Build the project'
+
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/drop.zip'
+        replaceExistingArchive: true
+      displayName: 'Archive build directory'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: '$(Build.ArtifactStagingDirectory)/drop.zip'
+        artifactName: 'drop'
+        publishLocation: 'Container'
+      displayName: 'Publish Artifact'
+
+- stage: Deploy
+  dependsOn: Build
+  jobs:
+  - deployment: DeployWebApp
+    environment: 'production'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: drop
+
+          - task: AzureRmWebAppDeployment@4
+            inputs:
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'woelements'  # Update with the actual service connection name
+              appType: 'webApp'
+              WebAppName: 'woelements'
+              packageForLinux: '$(Pipeline.Workspace)/drop/drop.zip'
+              RuntimeStack: 'NODE|16-lts'
+              DeploymentType: 'zipDeploy'
+              TakeAppOfflineFlag: true
