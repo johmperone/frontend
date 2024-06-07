@@ -68,9 +68,3 @@ stages:
             artifact: drop
             displayName: 'Download Build Artifact'
 
-          - task: AzureWebApp@1
-            inputs:
-              azureSubscription: 'Azure Subscription 1 (01d02cb3-b06b-4d68-9418-0c7bec917add)'
-              appType: 'webAppLinux'
-              appName: 'WeaponsOfWarAwakening'
-              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
