@@ -86,7 +86,7 @@ const Game: React.FC = () => {
     };
 
     try {
-      const response = await axios.post('https://103.241.67.70:8080/api/users', data);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users`, data);
       if (response.status === 200) {
         setMessage('User registered successfully!');
         handleReset();
@@ -119,7 +119,7 @@ const Game: React.FC = () => {
       return;
     }
     try {
-      const response = await axios.post('https://103.241.67.70:8080/api/users/password-recovery', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/password-recovery`, formData);
       if (response.status === 200) {
         alert('Password recovery email sent successfully!');
       } else {
@@ -151,7 +151,7 @@ const Game: React.FC = () => {
     };
 
     try {
-      const response = await axios.post('https://103.241.67.70:8080/api/users/change-password', data);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/change-password`, data);
       if (response.status === 200) {
         setMessage('Password changed successfully!');
         handleReset();
@@ -221,7 +221,7 @@ const Game: React.FC = () => {
           <div className="register-container">
             <h2>Password Recovery</h2>
             <form onSubmit={handleSubmit}>
-              <div className="form-column" >
+              <div className="form-column">
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
               </div>
