@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, ChangeEvent, FormEvent } from 'reac
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 // Interfaces
 interface FormData {
   name: string;
@@ -86,7 +88,7 @@ const Game: React.FC = () => {
     };
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users`, data);
+      const response = await axios.post(`${apiUrl}/users`, data);
       if (response.status === 200) {
         setMessage('User registered successfully!');
         handleReset();
@@ -119,7 +121,7 @@ const Game: React.FC = () => {
       return;
     }
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/password-recovery`, formData);
+      const response = await axios.post(`${apiUrl}/users/password-recovery`, formData);
       if (response.status === 200) {
         alert('Password recovery email sent successfully!');
       } else {
@@ -130,6 +132,8 @@ const Game: React.FC = () => {
       alert('An error occurred while sending the password recovery email. Please try again later.');
     }
   };
+
+  console.log('API URL:', apiUrl);  // Check if the API URL is being set correctly
 
   // Handle change password form submission
   const handleChangePassword = async (e: FormEvent) => {
@@ -151,7 +155,7 @@ const Game: React.FC = () => {
     };
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/change-password`, data);
+      const response = await axios.post(`${apiUrl}/api/users/change-password`, data);
       if (response.status === 200) {
         setMessage('Password changed successfully!');
         handleReset();
