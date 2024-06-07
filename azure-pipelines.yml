@@ -56,15 +56,17 @@ stages:
 
 - stage: Deploy
   dependsOn: Build
+  condition: succeeded()
   jobs:
-  - deployment: DeployWebApp
-    displayName: 'Deploy to Azure WebApp'
-    environment: 'production'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - download: current
-            artifact: drop
-            displayName: 'Download Build Artifact'
+  - job: Deploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - download: current
+      artifact: drop
+    - task: AzureWebApp@1
+      inputs:
+        azureSubscription: 'Assinatura do Azure 1 (01d02cb3-b06b-4d68-9418-0c7bec917add)'
+        appName: 'WeaponsOfWarAwakening'
+        package: '$(Pipeline.Workspace)/drop'
 
