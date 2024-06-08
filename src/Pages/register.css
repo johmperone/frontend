@@ -1,0 +1,69 @@
+.register-container {
+  text-align: center;
+}
+
+.register-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #000000; /* Medieval theme color */
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.form-column {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-column label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-column input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  border: 1px solid #6b4423; /* Medieval theme color */
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.form-column input:focus {
+  border-color: #ff4500; /* Fire color */
+  box-shadow: 0 0 5px rgba(255, 69, 0, 0.5); /* Fire effect */
+  outline: none;
+  background-color: #fff; /* Highlight the input on focus */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-row button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #6e1211; /* Medieval theme color */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-row button:hover {
+  background-color: #320605;
+}
+
+p {
+  margin-top: 20px;
+  color: #333;
+}
+
+
+.form-CAPTCHA {
+  margin-bottom: 15px;
+  align-items: center;
+}

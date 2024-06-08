@@ -2,7 +2,7 @@
 /* HOME */
 .video-container {
   top: 5%;
-  left: 2%;
+  left: 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
 
 .about-container {
   top: 5%;
-  left: 2%;
+  left: 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@
 .class-container {
   position: absolute;
   top: 15%;
-  left: 6%;
+  left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
 
 .screenshot-container {
   top: 40%;
-  left: 2%;
+  left: 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -150,6 +150,7 @@
   transform: scale(0.6);
   flex-direction: column;
   padding-bottom: 80%;
+  left: 5%;
   
 }
 
@@ -223,8 +224,8 @@
 /* GAME */
 
 .navbargame-container {
-  top: 10%;
-  right: 2%;
+  top: 15%;
+  left: 5%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -251,8 +252,8 @@
 /* REGISTER */
 
 .register-container {
-  top: 15%;
-  right: 2%;
+  top: 20%;
+  left: 5%;
   position: absolute;
   display: flex;
   justify-content: center;

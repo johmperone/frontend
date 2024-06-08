@@ -54,9 +54,12 @@ const Home: React.FC = () => {
       <h2>ABOUT GAME</h2>
       <p>
         
-        A 3D Fantasy MMORPG with 5 balanced classes Assassin, Tamer, Wizard, Monk and 
-        Fairy. New Updates, Events and Features bringing back the original Classic low rate 
-        WOW PH Gameplay experience. Ready your weapons, The war is not yet over!
+        A 3D Fantasy MMORPG with 5 balanced classes Assassin, Tamer, Wizard, 
+        Monk and 
+        Fairy. New Updates, Events and Features bringing back the original 
+        Classic low rate 
+        WOW PH Gameplay experience. Ready your weapons, The war is not yet 
+        over!
       
         </p>
       </div>

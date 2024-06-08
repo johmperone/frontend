@@ -23,41 +23,69 @@ const Game: React.FC = () => {
       <button onClick={() => openDiv(1)}>
         SERVER RULES {activeDiv === 1 && "⬇"}
       </button>
-      <button  onClick={() => openDiv(2)}>SERVER INFO {activeDiv === 2 && "⬇"}</button>
-      <button  onClick={() => openDiv(3)}>GAME GUIDE {activeDiv === 3 && "⬇"}</button>
+      <button  onClick={() => openDiv(2)}>
+        SERVER INFO {activeDiv === 2 && "⬇"}
+      </button>
+      <button  onClick={() => openDiv(3)}>
+        GAME GUIDE {activeDiv === 3 && "⬇"}
+      </button>
     </div>
       {activeDiv === 1 && (
         <div className="modal-div1">
-          <h2>Weapons Of War Awakening Terms and Conditions</h2>
+          
+          <h2>Weapons Of War Awakening</h2>
+          <h3>Terms and Conditions</h3>
           <p>
 
-1. Do not use glitches or bugs to gain an unfair advantage over other players, or to put other players at a disadvantage. All bugs found in the game should be reported immediately to the staff.
+1. Do not use glitches or bugs to gain an unfair advantage over other players, 
+or to put other players at a disadvantage. All bugs found in the game should be
+ reported immediately to the staff.
 â€‹<br></br>
-2. Please show respect to GMs and the game; any disrespectful language may result in severe consequences. Ignorance of this rule does not excuse anyone.
+2. Please show respect to GMs and the game; any disrespectful language may 
+result in severe consequences. Ignorance of this rule does not excuse anyone.
 â€‹<br></br>
-3. Any players found pretending to be a Game Master or Administrator of Weapons Of War Awakening will face disciplinary action including potential suspension or termination of their account.
+3. Any players found pretending to be a Game Master or Administrator of Weapons
+ Of War Awakening will face disciplinary action including potential suspension 
+ or termination of their account.
 â€‹<br></br>
-4. No refunds are allowed for payments and purchases. You do not need to spend money to play and enjoy the game. spending in the game is only optional and voluntary if you want to fully support the game or to improve your gaming experience.
+4. No refunds are allowed for payments and purchases. You do not need to spend 
+money to play and enjoy the game. spending in the game is only optional and 
+voluntary if you want to fully support the game or to improve your gaming 
+experience.
 â€‹<br></br>
-5. Any form of sexual harassment in the game, including but not limited to comments, gestures, and physical contact, will not be tolerated and will be subject to appropriate punishment, including but not limited to suspension or banishment from the game.
+5. Any form of sexual harassment in the game, including but not limited to 
+comments, gestures, and physical contact, will not be tolerated and will be 
+subject to appropriate punishment, including but not limited to suspension or 
+banishment from the game.
 <br></br>
 Rules on Player-to-Player Scams
 <br></br>
-It is important to remember that player to player transactions are solely the responsibility of the involved players. Your account and/or items are your responsibility. To avoid the risk of being scammed, we highly recommend conducting transactions through our Discord, where all players can see the exchange between you and another player. 
+It is important to remember that player to player transactions are solely the 
+responsibility of the involved players. Your account and/or items are your 
+responsibility. To avoid the risk of being scammed, we highly recommend 
+conducting transactions through our Discord, where all players can see the 
+exchange between you and another player. 
 <br></br>
-Alternatively, we suggest getting a trusted middleman to facilitate the transaction to further lessen the possibility of scams. Please note that if you do fall victim to a scam, we can only take action against the scammer if sufficient evidence is presented, and we cannot guarantee the return of lost items or money, especially if they have already been sold or traded to another player. Stay safe and vigilant in all your dealings within the game. 
+Alternatively, we suggest getting a trusted middleman to facilitate the 
+transaction to further lessen the possibility of scams. Please note that if 
+you do fall victim to a scam, we can only take action against the scammer if 
+sufficient evidence is presented, and we cannot guarantee the return of lost 
+items or money, especially if they have already been sold or traded to another 
+player. Stay safe and vigilant in all your dealings within the game. 
 <br></br>
-The punishment for a scammer in the game can vary depending on the severity of the offense and whether the scammer has a history of scamming. In general, first-time offenders may receive a warning or temporary suspension of their account, while repeat offenders or those who commit more serious offenses may receive a permanent ban from the game or even an IP Ban.</p>
+The punishment for a scammer in the game can vary depending on the severity of 
+the offense and whether the scammer has a history of scamming. In general, 
+first-time offenders may receive a warning or temporary suspension of their 
+account, while repeat offenders or those who commit more serious offenses may 
+receive a permanent ban from the game or even an IP Ban.</p>
         </div>
       )}
 
       {activeDiv === 2 && (
         <div className="modal-div2">
-        <h2>Server Info</h2>
+        <h2>Weapons Of War Awakening</h2>
+          <h3>Server Info</h3>
         <p>
-
-         <br />
-
 A 3D Fantasy Quest and Grind Based MMORPG with 5 balanced classes Assassin, 
 Tamer, Wizard, Monk and Fairy. New Updates, Events and Features bringing back 
 the original Classic Low Rate WOW PH Gameplay.
@@ -74,11 +102,10 @@ Communities</p>
       )}
 
       {activeDiv === 3 && (
-                <div className="modal-div3">
-                <h2>Game Guide</h2>
+                <div className="modal-div3">        
+                <h2>Weapons Of War Awakening</h2>
+                <h3>Game Guide</h3>
                 <p>
-
-<br />
 Help other players in quests and caves and become their master with the game's apprenticeship 
 feature! Receive various rewards each time your apprentice reach a level milestone. You will 
 also gain reputation points which you can use to purchase purple grade equipment.

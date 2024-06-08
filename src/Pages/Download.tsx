@@ -4,6 +4,7 @@ import Media from '../img/mediafire.webp'
 import Mega from '../img/mega.webp'
 
 const Download: React.FC = () => {
+  
   return (
     <div className="modal-content">
       <div className="download-container">

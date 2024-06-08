@@ -11,7 +11,7 @@ const App: React.FC = () => {
           <Route path="/home" element={<Background />} />
           <Route path="/game" element={<Background />} />
           <Route path="/download" element={<Background />} />
-          <Route path="/donate" element={<Background />} />
+          <Route path="/account" element={<Background />} />
           <Route path="/ranking" element={<Background />} />
           <Route path="/register" element={<Background />} />
           <Route path="/community" element={<Background />} />

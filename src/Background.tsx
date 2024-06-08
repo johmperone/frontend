@@ -3,10 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Home from './Pages/Home';
 import Game from './Pages/Game';
 import Download from './Pages/Download';
-import Donate from './Pages/Donate';
-import Ranking from './Pages/Ranking';
 import Register from './Pages/Register';
-import Community from './Pages/Community';
+import Account from './Pages/Account';
 // Import other modal page components as needed
 import './Background.css';
 import './navbar.css';
@@ -46,20 +44,12 @@ const Background: React.FC = () => {
         setCurrentPage(3);
         setShowModal(true);
         break;
-      case '/donate':
+      case '/register':
         setCurrentPage(4);
         setShowModal(true);
         break;
-      case '/ranking':
+      case '/account':
         setCurrentPage(5);
-        setShowModal(true);
-        break;
-      case '/register':
-        setCurrentPage(6);
-        setShowModal(true);
-        break;
-      case '/community':
-        setCurrentPage(7);
         setShowModal(true);
         break;
       default:
@@ -102,10 +92,9 @@ const Background: React.FC = () => {
             {currentPage === 1 && <Home />}
             {currentPage === 2 && <Game />}
             {currentPage === 3 && <Download />}
-            {currentPage === 4 && <Donate />}
-            {currentPage === 5 && <Ranking />}
-            {currentPage === 6 && <Register />}
-            {currentPage === 7 && <Community />}
+            {currentPage === 4 && <Register />}
+            {currentPage === 5 && <Account />}
+
             {/* Add other modal pages as needed */}
             <img src={PaperMiddle} alt="Logo" className="PaperMiddle-img" />
           </div>
@@ -117,10 +106,12 @@ const Background: React.FC = () => {
         <div className="btn2">
           <ul className="menu_btn">
             <li> 
-              <button onClick={() => changePage(7, '/register')}>REGISTER</button> {/* Use changePage with page number and path */}
+              <button onClick={() => changePage(4, '/register')}>
+                REGISTER
+              </button> {/* Use changePage with page number and path */}
             </li>
             <li>
-              <button onClick={() => changePage(8, '/community')}>COMMUNITY</button>
+              <button>COMMUNITY</button>
             </li>
           </ul>
         </div>
@@ -136,20 +127,30 @@ const Background: React.FC = () => {
         <div className="navbar">
           <ul className="menu">
             <li>
-              <button onClick={() => changePage(1, '/home')}>HOME</button> {/* Add onClick event */}
+              <button onClick={() => changePage(1, '/home')}>
+                HOME
+              </button>
             </li>
             <li>
-              <button onClick={() => changePage(2, '/game')}>GAME</button>
+              <button onClick={() => changePage(2, '/game')}>
+                GAME
+              </button>
             </li>
             <li>
-              <button onClick={() => changePage(4, '/download')}>DOWNLOAD</button>
+              <button onClick={() => changePage(3, '/download')}>
+                DOWNLOAD
+              </button>
             </li>
             <li>
-              <button onClick={() => changePage(5, '/donate')}>DONATE</button>
-              <ul className="sub-menu"></ul>
+              <button onClick={() => changePage(5, '/account')}>
+                ACCOUNT
+              </button>
             </li>
             <li>
-              <button onClick={() => changePage(6, '/ranking')}>RANKING</button>
+              <button >RANKING</button>
+            </li>
+            <li>
+              <button >RANKING</button>
             </li>
           </ul>
         </div>
