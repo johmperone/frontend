@@ -155,7 +155,7 @@ const Game: React.FC = () => {
     };
 
     try {
-      const response = await axios.post(`${apiUrl}/api/users/change-password`, data);
+      const response = await axios.post(`${apiUrl}/users/change-password`, data);
       if (response.status === 200) {
         setMessage('Password changed successfully!');
         handleReset();
