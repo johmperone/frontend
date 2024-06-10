@@ -65,7 +65,7 @@ const Register: React.FC = () => {
       pwd: passwordRef.current.value,
       pw2: passwordCRef.current.value,
       email: emailRef.current.value,
-      ref: verifyCodeRef.current?.value || null,
+      reference_code: verifyCodeRef.current?.value || null,
       captcha: captchaValue,
     };
 
