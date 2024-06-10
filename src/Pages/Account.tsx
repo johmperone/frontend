@@ -105,21 +105,14 @@ interface PasswordData {
       if (response.status === 200) {
         setMessage('User registered successfully!');
         handleReset();
-        setTimeout(() => {
-          setMessage(null);
-        }, 5000);
       } else {
         setMessage('An error occurred while registering the user. Please try again later.');
       }
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
+      handleReset(); // Reset the message after 5 seconds
     } catch (error) {
       console.error('Error registering user:', error);
       setMessage('An error occurred while registering the user. Please try again later.');
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
+      handleReset(); // Reset the message after 5 seconds
     }
   };
 
@@ -146,21 +139,15 @@ interface PasswordData {
       const response = await axios.post(`${apiUrl}/users/password-recovery`, formData);
       if (response.status === 200) {
         setMessage('Password recovery email sent successfully!');
-        setTimeout(() => {
-          setMessage(null);
-        }, 5000);
+        handleReset(); // Reset the message after 5 seconds
       } else {
         setMessage('An error occurred while sending the password recovery email. Please try again later.');
-        setTimeout(() => {
-          setMessage(null);
-        }, 5000);
+        handleReset(); // Reset the message after 5 seconds
       }
     } catch (error) {
       console.error('Error sending password recovery email:', error);
       setMessage('An error occurred while sending the password recovery email. Please try again later.');
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
+      handleReset(); // Reset the message after 5 seconds
     }
   };
 
@@ -169,17 +156,13 @@ interface PasswordData {
     e.preventDefault();
     if (!captchaValue) {
       setMessage('Please complete the ReCAPTCHA.');
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
+      handleReset(); // Reset the message after 5 seconds
       return;
     }
 
     if (passwordData.newPassword !== passwordData.confirmNewPassword) {
       setMessage('New passwords do not match.');
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
+      handleReset(); // Reset the message after 5 seconds
       return;
     }
 
@@ -193,30 +176,20 @@ interface PasswordData {
       const response = await axios.post(`${apiUrl}/users/change-password`, data);
       if (response.status === 200) {
         setMessage('Password changed successfully!');
-        handleReset();
-        setTimeout(() => {
-          setMessage(null);
-        }, 5000);
+        handleReset(); // Reset the message after 5 seconds
       } else {
         setMessage('An error occurred while changing the password. Please try again later.');
-        setTimeout(() => {
-          setMessage(null);
-        }, 5000);
+        handleReset(); // Reset the message after 5 seconds
       }
     } catch (error) {
       console.error('Error changing password:', error);
       setMessage('An error occurred while changing the password. Please try again later.');
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
+      handleReset(); // Reset the message after 5 seconds
     }
     // Reset the reCAPTCHA widget
     if (captchaRef.current) {
       captchaRef.current.reset();
     }
-
-    // Clear the captcha value
-    setCaptchaValue(null);
   };
 
 
