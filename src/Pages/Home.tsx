@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Page.css';
+import Video from '../video.mp4';
 import Divider from '../img/divider.webp';
 import Screenshot from '../img/screenshot.webp';
 import Monk from '../img/slides/IMG-6529ed54c97105.34486603.png'
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
       
       <div className="video-container">
         <video controls className="video-player">
-          <source src="your-video-source.mp4" type="video/mp4" />
+          <source src={Video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

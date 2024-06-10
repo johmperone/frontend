@@ -16,7 +16,8 @@ const Account: React.FC = () => {
     newPassword: '',
     confirmNewPassword: '',
   });
-
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  
   const openDiv = (divNumber: number) => {
     setActiveDiv(divNumber);
   };
@@ -104,12 +105,21 @@ interface PasswordData {
       if (response.status === 200) {
         setMessage('User registered successfully!');
         handleReset();
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       } else {
         setMessage('An error occurred while registering the user. Please try again later.');
       }
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
     } catch (error) {
       console.error('Error registering user:', error);
       setMessage('An error occurred while registering the user. Please try again later.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
     }
   };
 
@@ -136,12 +146,21 @@ interface PasswordData {
       const response = await axios.post(`${apiUrl}/users/password-recovery`, formData);
       if (response.status === 200) {
         setMessage('Password recovery email sent successfully!');
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       } else {
         setMessage('An error occurred while sending the password recovery email. Please try again later.');
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       }
     } catch (error) {
       console.error('Error sending password recovery email:', error);
       setMessage('An error occurred while sending the password recovery email. Please try again later.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
     }
   };
 
@@ -150,11 +169,17 @@ interface PasswordData {
     e.preventDefault();
     if (!captchaValue) {
       setMessage('Please complete the ReCAPTCHA.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
       return;
     }
 
     if (passwordData.newPassword !== passwordData.confirmNewPassword) {
       setMessage('New passwords do not match.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
       return;
     }
 
@@ -169,13 +194,29 @@ interface PasswordData {
       if (response.status === 200) {
         setMessage('Password changed successfully!');
         handleReset();
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       } else {
         setMessage('An error occurred while changing the password. Please try again later.');
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       }
     } catch (error) {
       console.error('Error changing password:', error);
       setMessage('An error occurred while changing the password. Please try again later.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
     }
+    // Reset the reCAPTCHA widget
+    if (captchaRef.current) {
+      captchaRef.current.reset();
+    }
+
+    // Clear the captcha value
+    setCaptchaValue(null);
   };
 
 

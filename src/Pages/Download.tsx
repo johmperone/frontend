@@ -16,7 +16,7 @@ const Download: React.FC = () => {
           </button>
 
         <p>CLIENT SIZE 612MB | 2023/10/14</p>
-        <button onClick={() => window.open("https://www.mediafire.com/file/lh097tzjxlhzx50/Weapons_Of_War_Awakening.exe/file", "_blank")} className="download-button">
+        <button onClick={() => window.open("https://mega.nz/file/OldQFCjQ#Ko3U3lVXsn6Nhu2auBgJZOkDq0tZZhBiNEMVz_ZKKzE", "_blank")} className="download-button">
             <img src={Mega} alt="Mega" className="download-image" />
           </button>
         <p>CLIENT SIZE 612MB | 2023/10/14</p>

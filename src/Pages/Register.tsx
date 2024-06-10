@@ -10,6 +10,7 @@ const Register: React.FC = () => {
   const [activeDiv, setActiveDiv] = useState<number | null>(null);
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const captchaRef = useRef<ReCAPTCHA>(null);
 
   // Get the site key from environment variable, with a fallback
   const apiCPT: string = process.env.REACT_APP_CAPTCHA_API || 'default-site-key'
@@ -52,11 +53,17 @@ const Register: React.FC = () => {
       !captchaValue
     ) {
       setMessage('Please fill out all fields and complete the reCAPTCHA.');
+      setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       return;
     }
 
     if (passwordRef.current.value !== passwordCRef.current.value) {
       setMessage('Passwords do not match.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
       return;
     }
 
@@ -73,14 +80,30 @@ const Register: React.FC = () => {
       const response = await axios.post(`${apiUrl}/users`, data);
       if (response.status === 200) {
         setMessage('User registered successfully!');
-        handleReset();
+        handleReset(); // Reset the message after 5 seconds
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       } else {
         setMessage('An error occurred while registering the user. Please try again later.');
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
       }
     } catch (error) {
       console.error('Error registering user:', error);
       setMessage('An error occurred while registering the user. Please try again later.');
+      setTimeout(() => {
+        setMessage(null);
+      }, 5000);
     }
+    // Reset the reCAPTCHA widget
+    if (captchaRef.current) {
+      captchaRef.current.reset();
+    }
+
+    // Clear the captcha value
+    setCaptchaValue(null);
   };
 
   return (
