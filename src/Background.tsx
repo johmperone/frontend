@@ -147,7 +147,7 @@ const Background: React.FC = () => {
               </button>
             </li>
             <li>
-              <button >RANKING</button>
+              <button >DONATE</button>
             </li>
             <li>
               <button >RANKING</button>

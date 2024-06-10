@@ -65,7 +65,7 @@ const Register: React.FC = () => {
       pwd: passwordRef.current.value,
       pw2: passwordCRef.current.value,
       email: emailRef.current.value,
-      refcode: verifyCodeRef.current?.value || null,
+      ref: verifyCodeRef.current?.value || null,
       captcha: captchaValue,
     };
 
@@ -114,6 +114,7 @@ const Register: React.FC = () => {
             <ReCAPTCHA
               sitekey={apiCPT}
               onChange={(value) => setCaptchaValue(value)}
+              className="custom-recaptcha"
             />
           </div>
               <div className="form-row">

@@ -95,7 +95,7 @@ interface PasswordData {
       pwd: passwordRef.current.value,
       pw2: passwordCRef.current.value,
       email: emailRef.current.value,
-      refcode: verifyCodeRef.current?.value || null,
+      reference_code: verifyCodeRef.current?.value || null,
       captcha: captchaValue,
     };
 
@@ -191,7 +191,7 @@ interface PasswordData {
       {activeDiv === 1 && (
         <div className="modal-div">
           <div className="register-container">
-            <h2>Register Account</h2>
+            <h2>REGISTER ACCOUNT</h2>
             <form onSubmit={handleRegister}>
               <div className="form-column">
                 <label htmlFor="login">Login:</label>
@@ -232,7 +232,7 @@ interface PasswordData {
       {activeDiv === 2 && (
         <div className="modal-div">
           <div className="register-container">
-            <h2>Password Recovery</h2>
+            <h2>PASSWORD RECOVERY</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-column">
                 <label htmlFor="name">Name:</label>
@@ -260,7 +260,7 @@ interface PasswordData {
       {activeDiv === 3 && (
         <div className="modal-div">
           <div className="register-container">
-            <h2>Change Password</h2>
+            <h2>CHANCE PASSWORD</h2>
             <form onSubmit={handleChangePassword}>
               <div className="form-column">
                 <label htmlFor="login">Login:</label>

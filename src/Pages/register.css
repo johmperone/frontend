@@ -67,3 +67,22 @@ p {
   margin-bottom: 15px;
   align-items: center;
 }
+
+/* CustomRecaptcha.css */
+.custom-recaptcha {
+  width: 304px; /* Width of the ReCAPTCHA element */
+  height: 78px; /* Height of the ReCAPTCHA element */
+  overflow: hidden;
+  background: transparent; /* Make the background transparent */
+}
+
+.custom-recaptcha iframe {
+  background: transparent !important; /* Make the iframe background transparent */
+  box-shadow: none !important; /* Remove any box-shadow */
+  border: none !important; /* Remove any border */
+}
+
+/* Additional style to hide the ReCAPTCHA badge */
+.grecaptcha-badge {
+  display: none !important;
+}
