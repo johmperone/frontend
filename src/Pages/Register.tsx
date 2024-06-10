@@ -40,6 +40,9 @@ const Register: React.FC = () => {
     if (passwordCRef.current) passwordCRef.current.value = '';
     if (emailRef.current) emailRef.current.value = '';
     if (verifyCodeRef.current) verifyCodeRef.current.value = '';
+    if (captchaRef.current) {
+      captchaRef.current.reset();
+    }
   };
 
   // Handle registration form submission
@@ -69,6 +72,7 @@ const Register: React.FC = () => {
       email: emailRef.current.value,
       reference_code: verifyCodeRef.current?.value || null,
       captcha: captchaValue,
+      
     };
 
     try {
@@ -76,6 +80,7 @@ const Register: React.FC = () => {
       if (response.status === 200) {
         setMessage('User registered successfully!');
         handleReset(); // Reset the message after 5 seconds
+
       } else {
         setMessage('An error occurred while registering the user. Please try again later.');
         handleReset(); // Reset the message after 5 seconds
