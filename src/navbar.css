@@ -1,8 +1,9 @@
+/* Navbar principal */
 .navbar {
-  position:absolute;
+  position: absolute;
   top: 18%;
   left: 50%;
-  transform: translate(-50%,0%);
+  transform: translate(-50%, 0%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +20,8 @@
   z-index: 8;
 }
 
-.btn2 {
+/* Botões principais */
+.btn, .btn2 {
   position: absolute;
   top: 5%;
   left: 50%;
@@ -27,76 +29,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
 }
 
 .btn {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
+  z-index: 5;
 }
 
-@media screen and (max-width: 980px) {
-  .btn {
-    transform: translate(-50%, 50%) scale(0.9);
-  }
-  .btn2 {
-    transform: translate(-50%, 50%) scale(0.9);
-  }
+.btn2 {
+  z-index: 10;
 }
 
-@media screen and (max-width: 768px) {
-  .btn {
-    transform: translate(-50%, 50%) scale(0.6);
-  }
-  .btn2 {
-    transform: translate(-50%, 50%) scale(0.6);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .btn {
-    transform: translate(-50%, 50%) scale(0.5);
-  }
-  .btn2 {
-    transform: translate(-50%, 50%) scale(0.5);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .btn {
-    transform: translate(-50%, 50%) scale(0.3);
-  }
-  .btn2 {
-    transform: translate(-50%, 50%) scale(0.3);
-  }
-}
-
-
+/* Botões adicionais */
 .btn_play {
   position: absolute;
   top: -25px;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 7;
   box-sizing: border-box;
 }
+
 .btn_left {
   position: absolute;
   top: 2px;
   left: -140px;
-  display:block;
+  display: block;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 6;
 }
 
@@ -107,10 +70,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 6;
 }
 
+/* Elementos "morro" */
 .morro_left {
   position: absolute;
   top: -30px;
@@ -118,7 +82,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 5;
 }
 
@@ -129,57 +93,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 5;
 }
 
+/* Menu principal */
 .menu {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Adicionando flexbox */
+  display: flex; /* Usando flexbox para alinhamento */
   z-index: 8;
-  
-  @media screen and (max-width: 650px){
-    font-size: 12px;
-  }
-  @media screen and (max-width: 480px){
-    font-size: 8px;
-  }
-  @media screen and (max-width: 380px){
-    font-size: 6px;
-  }
 
 }
 
-.menu_btn{
-  top: 5px;
+/* Menu de botões */
+.menu_btn {
   position: absolute;
+  top: 5px;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Adicionando flexbox */
+  display: flex; /* Usando flexbox para alinhamento */
   z-index: 9;
   font-size: 12px;
-  @media screen and (max-width: 650px){
-    font-size: 12px;
-  }
-  @media screen and (max-width: 480px){
-    font-size: 8px;
-  }
-  @media screen and (max-width: 380px){
-    font-size: 6px;
-  }
-
 }
 
+/* Itens do menu de botões */
 .menu_btn li {
-  position: relative; /* Adicionando position: relative; */
+  position: relative; /* Necessário para alinhamento interno */
   margin-right: 170px;
   left: 90px;
   max-width: 90px; /* Definindo uma largura fixa para os botões */
   z-index: 9;
 }
+
+/* Estilo dos botões do menu */
 .menu_btn li button {
   font-size: inherit; /* Mantém o tamanho da fonte do elemento pai */
   font-family: inherit; /* Mantém a família da fonte do elemento pai */
@@ -190,7 +139,6 @@
   width: 100%; /* Fazendo com que o botão ocupe toda a largura do elemento pai */
   z-index: 9;
 }
-
 
 .menu_btn li a {
   text-decoration: none;
@@ -207,12 +155,15 @@
   z-index: 8;
 }
 
+/* Itens do menu principal */
 .menu li {
-  position: relative; /* Adicionando position: relative; */
+  position: relative; /* Necessário para alinhamento interno */
   margin-right: 20px;
   max-width: 90px; /* Definindo uma largura fixa para os botões */
   z-index: 9;
 }
+
+/* Estilo dos botões do menu principal */
 .menu li button {
   font-size: inherit; /* Mantém o tamanho da fonte do elemento pai */
   font-family: inherit; /* Mantém a família da fonte do elemento pai */
@@ -222,16 +173,13 @@
   color: #FFF;
   width: 100%; /* Fazendo com que o botão ocupe toda a largura do elemento pai */
   z-index: 8;
-
- 
 }
 
 .menu li button:hover {
-
   text-shadow: 1px 1px 5px rgb(130, 130, 130), 0 0 1em rgb(255, 167, 221), 0 0 0.2em rgb(226, 226, 255);
- 
 }
 
+/* Links do menu principal */
 .menu li a {
   text-decoration: none;
   color: #FFF;
@@ -239,9 +187,9 @@
   display: block;
   z-index: 8;
   justify-content: space-around; /* Distribui uniformemente os itens */
-  
 }
 
+/* Submenu */
 .sub-menu {
   display: none;
   top: calc(20% + 5px); /* Posiciona o submenu abaixo do botão */
@@ -249,19 +197,83 @@
   position: relative;
   z-index: 8;
   width: 100%; /* Definindo a largura do submenu igual à largura do botão */
-  
+  background-color: #333; /* Fundo do submenu */
 }
 
 .menu li:hover .sub-menu {
   display: block;
   justify-content: space-around;
   z-index: 8;
-  background-color: #333; /* Change the background color when hovering over li */
-  
 }
 
 .sub-menu li {
   display: block;
   z-index: 8;
-  
+}
+
+/* Responsividade */
+
+/* Para telas até 980px */
+@media screen and (max-width: 980px) {
+  .btn, .btn2 {
+    transform: translate(-50%, 50%) scale(0.9);
+  }
+}
+
+/* Para telas até 768px */
+@media screen and (max-width: 768px) {
+  .btn, .btn2 {
+    transform: translate(-50%, 50%) scale(0.6);
+  }
+
+  .menu {
+    font-size: 12px;
+  }
+
+  .menu_btn {
+    font-size: 8px;
+  }
+}
+
+/* Para telas até 650px */
+@media screen and (max-width: 650px) {
+  .menu_btn {
+    font-size: 12px;
+  }
+  .menu {
+    font-size: 8px;
+  }
+}
+
+/* Para telas até 480px */
+@media screen and (max-width: 480px) {
+  .navbar{
+    top: 16%;
+  }   
+  .btn, .btn2 {
+    transform: translate(-50%, 50%) scale(0.5);
+  }
+  .menu li {
+    margin-right: 2px;
+  }
+  .menu, .menu_btn {
+    font-size: 6px;
+  }
+}
+
+/* Para telas até 380px */
+@media screen and (max-width: 380px) {
+  .menu_btn {
+    font-size: 12px;
+  }
+  .menu {
+    top: -5px;
+    font-size: 6px;
+  }
+  .menu li {
+  margin-right: 5px;
+}
+  .btn, .btn2 {
+    transform: translate(-50%, 50%) scale(0.3);
+  }
 }

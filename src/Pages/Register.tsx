@@ -1,29 +1,18 @@
-import React, { useState, useEffect, useRef, FormEvent } from 'react';
+import React, { useState, useRef, FormEvent } from 'react';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
-import './Page.css';
 import './register.css';
 
 // Main Component
 const Register: React.FC = () => {
   // State variables
-  const [activeDiv, setActiveDiv] = useState<number | null>(null);
+
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const captchaRef = useRef<ReCAPTCHA>();
 
   // Get the site key from environment variable, with a fallback
   const apiCPT: string = process.env.REACT_APP_CAPTCHA_API || 'default-site-key'
-
-  const openDiv = (divNumber: number) => {
-    setActiveDiv(divNumber);
-  };
-
-  useEffect(() => {
-    openDiv(1); // Open Div 1 when component mounts
-  }, []); // Empty dependency array ensures the effect runs only once
-
-
   const apiUrl = process.env.REACT_APP_API_URL;
 
   // Refs for form inputs
@@ -96,10 +85,8 @@ const Register: React.FC = () => {
     }
   };
 
-  return (
-    <div className="modal-content">
-      {activeDiv === 1 && (
-        <div className="modal-div">
+  return (    
+                
           <div className="register-container">
             <h2>REGISTER NOW</h2>
             <form onSubmit={handleRegister}>
@@ -137,9 +124,6 @@ const Register: React.FC = () => {
             </form>
             {message && <p>{message}</p>}
           </div>
-        </div>
-      )}
-    </div>
   );
 };
 

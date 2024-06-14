@@ -86,7 +86,7 @@ const Background: React.FC = () => {
       </div>
       {/* Modal */}
       {showModal && currentPage && (
-        <div className="modal">
+
           <div className="modal-content">
             {/* Conditional rendering based on current page */}
             {currentPage === 1 && <Home />}
@@ -98,7 +98,7 @@ const Background: React.FC = () => {
             {/* Add other modal pages as needed */}
             <img src={PaperMiddle} alt="Logo" className="PaperMiddle-img" />
           </div>
-        </div>
+
       )}
 
       <div className="nav_container">

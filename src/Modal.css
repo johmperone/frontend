@@ -1,106 +1,74 @@
-.modal {
-  position: absolute; /* Tornar o modal estático */
-  width: 100%;
-  height: 100%;
-  margin-top: 300px;
-  margin-left: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 6; /* Defina um z-index alto para garantir que o modal fique em cima das outras divs */
-  overflow: -moz-hidden-unscrollable;
-  
-
-}
-.modal-div1 {
-  margin-bottom: 80px;
-  margin-left: 65px;
-  width: 520px;
-}
-.modal-div1 h2 {
-  text-align: center;
-}
-.modal-div1 h3 {
-  text-align: center;
-}
-.modal-div2 {
-  margin-bottom: 495px;
-  margin-left: 65px;
-  width: 520px;
-  align-items: center;
-}
-.modal-div2 h2 {
-  text-align: center;
-}
-.modal-div2 h3 {
-  text-align: center;
-}
-.modal-div3 {
-  margin-bottom: 225px;
-  margin-left: 65px;
-  width: 520px;
-}
-.modal-div3 h2 {
-  text-align: center;
-}
-.modal-div3 h3 {
-  text-align: center;
-}
+/* Modal Content */
 .modal-content {
   position: absolute; /* Tornar o modal estático */
-  width: 760px;
-  height: 1300px;
+  width: 90%; /* Usar porcentagem para largura responsiva */
+  max-width: 1200px; /* Definir uma largura máxima */
+  height: auto; /* Ajustar altura automaticamente */
+  max-height: 100vh; /* Definir uma altura máxima relativa à viewport */
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Garantir que os itens estejam em uma coluna */
+  justify-content: flex-start; /* Alinhar itens ao topo */
   align-items: center;
-  z-index: 6; /* Defina um z-index alto para garantir que o modal fique em cima das outras divs */
-  overflow: -moz-hidden-unscrollable;
-  
+  z-index: 4; /* Defina um z-index alto para garantir que o modal fique em cima das outras divs */
+  padding: 20px; /* Adicionar um padding para o conteúdo */
+  box-sizing: border-box; /* Incluir padding e borda na largura e altura */
+  left: 50%;
+  transform: translateX(-50%);
 }
-
-@media screen and (max-width: 915px){
-
-}
-
-@media screen and (max-width: 800px){
-
-}
-
-@media screen and (max-width: 480px){
-  .modal{
-  transform: scale(0.5);
-  margin-top: -180px;
- }
-}
-
-@media screen and (max-width: 414px){
-  .modal{
-    transform: scale(0.5);
-    margin-top: -165px;
-    
-   }
-   .modal-content{
-    width: 700px;
-    height: 1200px;
-    margin-left: 50px;
-   }
-}
-
-@media screen and (max-width: 375px){
-  .modal{
-    transform: scale(0.4);
-    margin-top: -135px;
-   }
-   .modal-content{
-    width: 800px;
-    height: 1300px;
-    margin-left: 50px;
-   }
-}
-
 .PaperMiddle-img {
-  width: 100%; /* Definindo a largura em relação ao contêiner pai */
-  height: 100%; /* Definindo a altura em relação ao contêiner pai */
-  max-width: 100%; /* Garantindo que a largura máxima não ultrapasse o contêiner pai */
-  max-height: 100%; /* Garantindo que a altura máxima não ultrapasse o contêiner pai */
+  width: 100%; /* Ajustar a largura para 100% do contêiner pai */
+  height: auto; /* Manter a proporção da imagem */
+  max-width: 765px; /* Garantir que a largura máxima não ultrapasse 765px */
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  top: 350%; /* Ajustar conforme necessário */
+  left: 55%; /* Mover um pouco para a direita */
+  transform: translateX(-50%);
+}
+@media (max-width: 1024px) {
+  .modal-content {
+    width: 85%; /* Ajustar a largura em telas menores */
+    max-width: 100%; /* Remover a largura máxima */
+    padding: 10px; /* Reduzir padding */
+  }
+  .PaperMiddle-img {
+    top: 700%;
+    left: 57%; /* Manter a posição um pouco para a direita */
+  }
+}
+@media (max-width: 768px) {
+  .modal-content {
+    width: 85%; /* Ajustar a largura em telas menores */
+    max-width: 100%; /* Remover a largura máxima */
+    padding: 10px; /* Reduzir padding */
+  }
+  .PaperMiddle-img {
+    top: 450%;
+    left: 57%; /* Manter a posição um pouco para a direita */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 85%; /* Ajustar a largura em telas menores */
+    max-width: 100%; /* Remover a largura máxima */
+    padding: 10px; /* Reduzir padding */
+  }
+  .PaperMiddle-img {
+    left: 57%; /* Manter a posição um pouco para a direita */
+    top: 60px; /* Ajustar conforme necessário */
+  }
+}
+
+@media (max-width: 320px) {
+  .modal-content {
+    width: 85%; /* Ajustar a largura em telas menores */
+    max-width: 100%; /* Remover a largura máxima */
+    padding: 10px; /* Reduzir padding */
+  }
+  .PaperMiddle-img {
+    left: 55%; /* Manter a posição um pouco para a direita */
+    top: 250px; /* Ajustar conforme necessário */
+  }
 }

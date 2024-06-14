@@ -1,18 +1,27 @@
-.register-container {
+/* Container principal da conta, registro, game e download */
+.account-container, .register-container, .game-container, .download-container {
+  position: absolute;
   text-align: center;
+  padding: 0;
+  width: 90%; /* Ajustar a largura para 90% */
+  max-width: 400px; /* Definir uma largura máxima */
+  left: 60%; /* Centralizar horizontalmente */
+  transform: translateX(-50%);
+  top: 400px;
 }
 
-.register-container h2 {
-  margin-bottom: 20px;
+.account-container h2, .register-container h2, .game-container h2, .download-container h2 {
   font-size: 24px;
   color: #000000; /* Medieval theme color */
   padding-bottom: 10px;
   margin-bottom: 30px;
 }
 
+/* Estrutura da coluna do formulário */
 .form-column {
   margin-bottom: 15px;
   text-align: left;
+  width: 100%; /* Garantir que a coluna ocupe toda a largura */
 }
 
 .form-column label {
@@ -37,8 +46,10 @@
   background-color: #fff; /* Highlight the input on focus */
 }
 
+/* Estrutura da linha do formulário */
 .form-row {
   display: flex;
+  flex-direction: column; /* Mudar para coluna em telas menores */
   justify-content: space-between;
   margin-top: 20px;
 }
@@ -51,6 +62,8 @@
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Garantir que o botão ocupe toda a largura */
+  margin-bottom: 10px; /* Adicionar espaço entre os botões */
 }
 
 .form-row button:hover {
@@ -62,27 +75,246 @@ p {
   color: #333;
 }
 
-
+/* ReCAPTCHA */
 .form-CAPTCHA {
   margin-bottom: 15px;
   align-items: center;
 }
 
-/* CustomRecaptcha.css */
 .custom-recaptcha {
-  width: 304px; /* Width of the ReCAPTCHA element */
-  height: 78px; /* Height of the ReCAPTCHA element */
+  width: 100%; /* Ajustar a largura para 100% */
+  max-width: 304px; /* Manter a largura máxima do ReCAPTCHA */
+  height: auto; /* Ajustar a altura automaticamente */
   overflow: hidden;
-  background: transparent; /* Make the background transparent */
+  background: transparent; /* Tornar o fundo transparente */
 }
 
 .custom-recaptcha iframe {
-  background: transparent !important; /* Make the iframe background transparent */
-  box-shadow: none !important; /* Remove any box-shadow */
-  border: none !important; /* Remove any border */
+  background: transparent !important; /* Tornar o fundo do iframe transparente */
+  box-shadow: none !important; /* Remover qualquer sombra */
+  border: none !important; /* Remover qualquer borda */
 }
 
-/* Additional style to hide the ReCAPTCHA badge */
+/* Esconder o badge do ReCAPTCHA */
 .grecaptcha-badge {
   display: none !important;
+}
+
+/* Navbar de jogos */
+.navbargame-container {
+  display: flex;
+  justify-content: space-between; /* Espaçamento uniforme entre os botões */
+  align-items: center;
+  position: absolute;
+  top: 300px;
+  left: 60%;
+  width: 80%; /* Ajustar conforme necessário */
+  max-width: 400px; /* Definir uma largura máxima */
+  transform: translateX(-50%);
+  box-sizing: border-box; /* Incluir padding e borda na largura */
+  z-index: 9;
+}
+
+.navbargame-container button {
+  flex: 1; /* Garantir que os botões ocupem a mesma largura */
+  margin: 0 10px; /* Espaçamento horizontal entre os botões */
+  font-size: 16px; /* Ajustar tamanho da fonte conforme necessário */
+  border: none; /* Remover bordas */
+  border-radius: 4px; /* Adicionar bordas arredondadas */
+  cursor: pointer; /* Alterar o cursor para indicar clicável */
+  transition: background-color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+.navbargame-container button:hover {
+  background-color: #320605; /* Cor de fundo ao passar o mouse */
+}
+
+/* Media Queries para Responsividade */
+@media (min-width: 1024px) {
+  .form-row {
+    flex-direction: row; /* Alinhar os botões em linha em telas maiores */
+  }
+
+  .form-row button {
+    width: auto; /* Ajustar a largura para automática */
+    margin-bottom: 0; /* Remover espaço entre os botões */
+    margin-right: 10px; /* Adicionar espaço entre os botões */
+  }
+
+  .form-row button:last-child {
+    margin-right: 0; /* Remover margem direita do último botão */
+  }
+}
+
+@media (max-width: 1024px) {
+  .game-container, .download-container {
+    top: 350px;
+    left: 65%;
+    width: 85%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  .navbargame-container {
+    width: 95%; /* Ajustar largura em telas menores */
+  }
+
+  .navbargame-container button {
+    font-size: 14px; /* Ajustar tamanho da fonte em telas menores */
+    padding: 8px 16px; /* Ajustar padding em telas menores */
+    margin: 5px; /* Ajustar margem entre botões */
+  }
+}
+
+@media (max-width: 768px) {
+  .account-container, .register-container, .game-container, .download-container {
+    top: 250px;
+    width: 85%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.9);
+    height: 120px;
+  }
+  .register-container {
+    top: 350px;
+    width: 100%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.7);
+  }
+  .navbargame-container {
+    top: 200px;
+    width: 100%;
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  .navbargame-container button {
+    width: 100%; /* Garantir que os botões ocupem toda a largura */
+    margin: 10px 0; /* Espaçamento vertical entre os botões */
+  }
+
+  .game-container h2, .download-container h2 {
+    font-size: 15px; /* Reduzir o tamanho da fonte em telas menores */
+  }
+
+  .game-container p, .download-container p {
+    font-size: 14px; /* Reduzir o tamanho da fonte em telas menores */
+  }
+}
+
+@media (max-width: 580px) {
+  .account-container, .game-container, .download-container {
+    top: 200px;
+    width: 100%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.7);
+  }
+  .register-container {
+    top: 350px;
+    width: 100%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.7);
+  }
+  .account-container h2, .register-container h2, .game-container h2, .download-container h2 {
+    font-size: 20px; /* Reduzir o tamanho da fonte em telas menores */
+  }
+
+  .form-column input {
+    padding: 8px; /* Reduzir o padding dos inputs */
+  }
+
+  .form-row button {
+    padding: 8px 16px; /* Reduzir o padding dos botões */
+  }
+
+  .game-container p, .download-container p {
+    font-size: 14px; /* Reduzir o tamanho da fonte do parágrafo */
+  }
+
+  .navbargame-container {
+    top: 150px;
+    width: 90%;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  .navbargame-container button {
+    font-size: 12px; /* Reduzir o tamanho da fonte em telas menores */
+    padding: 6px 12px; /* Ajustar padding em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .account-container, .game-container, .download-container {
+    top: 180px;
+    width: 100%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.7);
+  }
+ .download-container {
+    top: 100px;
+    width: 100%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.7);
+  }
+  .register-container {
+    top: 250px;
+    width: 100%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.7);
+  }
+  .system-container {
+    top: 40px;
+    position: relative;
+    flex-direction: column;
+    align-items: center; /* Align items horizontally to the center */
+    justify-content: center; /* Align items vertically to the center */
+    width: 100%;
+  }
+  .account-container h2, .register-container h2, .game-container h2, .download-container h2 {
+    font-size: 20px; /* Reduzir o tamanho da fonte em telas menores */
+  }
+
+  .form-column input {
+    padding: 8px; /* Reduzir o padding dos inputs */
+  }
+
+  .form-row button {
+    padding: 8px 16px; /* Reduzir o padding dos botões */
+  }
+
+  .game-container p, .download-container p {
+    font-size: 9px; /* Reduzir o tamanho da fonte do parágrafo */
+  }
+
+  .navbargame-container {
+    top: 120px;
+    width: 90%;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  .navbargame-container button {
+    font-size: 12px; /* Reduzir o tamanho da fonte em telas menores */
+    padding: 6px 12px; /* Ajustar padding em telas menores */
+  }
+}
+
+@media (max-width: 360px) {
+  .account-container, .register-container, .game-container, .download-container {
+    top: 150px;
+    width: 110%; /* Ajustar a largura em telas menores */
+    transform: translateX(-50%) scale(0.6);
+  }
+  .system-container {
+    position: relative;
+    flex-direction: column;
+    align-items: center; /* Align items horizontally to the center */
+    justify-content: center; /* Align items vertically to the center */
+    width: 100%;
+  }
+  .account-container h2, .register-container h2, .game-container h2, .download-container h2 {
+    font-size: 20px; /* Reduzir o tamanho da fonte em telas menores */
+    text-align: center;
+  }
+
+  .form-column input {
+    padding: 8px; /* Reduzir o padding dos inputs */
+  }
+
+  .form-row button {
+    padding: 8px 16px; /* Reduzir o padding dos botões */
+  }
+
+  .game-container p, .download-container p {
+    font-size: 8px; /* Reduzir o tamanho da fonte do parágrafo */
+  }
 }

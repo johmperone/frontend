@@ -1,7 +1,7 @@
 // ModalPage1.tsx
 
 import React, { useState, useEffect } from 'react';
-
+import './register.css';
 const Game: React.FC = () => {
   const [activeDiv, setActiveDiv] = useState<number | null>(null);
 
@@ -31,7 +31,7 @@ const Game: React.FC = () => {
       </button>
     </div>
       {activeDiv === 1 && (
-        <div className="modal-div1">
+        <div className="game-container">
           
           <h2>Weapons Of War Awakening</h2>
           <h3>Terms and Conditions</h3>
@@ -82,7 +82,7 @@ receive a permanent ban from the game or even an IP Ban.</p>
       )}
 
       {activeDiv === 2 && (
-        <div className="modal-div2">
+        <div className="game-container">
         <h2>Weapons Of War Awakening</h2>
           <h3>Server Info</h3>
         <p>
@@ -102,7 +102,7 @@ Communities</p>
       )}
 
       {activeDiv === 3 && (
-                <div className="modal-div3">        
+                <div className="game-container">        
                 <h2>Weapons Of War Awakening</h2>
                 <h3>Game Guide</h3>
                 <p>

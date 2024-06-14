@@ -41,7 +41,7 @@ const Home: React.FC = () => {
 
 
   return (
-    <div className="modal-content">
+    <div className="home-container">
       
       <div className="video-container">
         <video controls className="video-player">

@@ -2,11 +2,10 @@
 import React from 'react';
 import Media from '../img/mediafire.webp'
 import Mega from '../img/mega.webp'
-
+import './register.css';
 const Download: React.FC = () => {
   
   return (
-    <div className="modal-content">
       <div className="download-container">
 
       <h2>DOWNLOAD</h2>
@@ -41,7 +40,6 @@ const Download: React.FC = () => {
         </div>
       </div>
       </div>
-    </div>
   );
 }
 

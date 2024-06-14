@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
-import './Page.css';
 import './register.css';
 // Main Component
 const Account: React.FC = () => {
@@ -203,8 +202,7 @@ interface PasswordData {
       </div>
 
       {activeDiv === 1 && (
-        <div className="modal-div">
-          <div className="register-container">
+          <div className="account-container">
             <h2>REGISTER ACCOUNT</h2>
             <form onSubmit={handleRegister}>
               <div className="form-column">
@@ -240,12 +238,10 @@ interface PasswordData {
             </form>
             {message && <p>{message}</p>}
           </div>
-        </div>
       )}
 
       {activeDiv === 2 && (
-        <div className="modal-div">
-          <div className="register-container">
+          <div className="account-container">
             <h2>PASSWORD RECOVERY</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-column">
@@ -268,12 +264,10 @@ interface PasswordData {
             </form>
             {message && <p>{message}</p>}
           </div>
-        </div>
       )}
 
       {activeDiv === 3 && (
-        <div className="modal-div">
-          <div className="register-container">
+          <div className="account-container">
             <h2>CHANCE PASSWORD</h2>
             <form onSubmit={handleChangePassword}>
               <div className="form-column">
@@ -304,7 +298,6 @@ interface PasswordData {
             </form>
             {message && <p>{message}</p>}
           </div>
-        </div>
       )}
     </div>
   );
