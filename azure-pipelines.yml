@@ -42,5 +42,5 @@ stages:
     - task: AzureWebApp@1
       inputs:
         azureSubscription: 'wowaweb (4a07acc0-123a-4c7a-830f-aa92342ca7c5)'
-        appName: 'wowadevfront'
+        appName: 'wowafront'
         package: '$(Pipeline.Workspace)/drop'
