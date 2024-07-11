@@ -41,6 +41,6 @@ stages:
       artifact: drop
     - task: AzureWebApp@1
       inputs:
-        azureSubscription: 'Assinatura do Azure 1 (01d02cb3-b06b-4d68-9418-0c7bec917add)'
-        appName: 'WeaponsOfWarAwakening'
+        azureSubscription: 'wowaweb (4a07acc0-123a-4c7a-830f-aa92342ca7c5)'
+        appName: 'wowadevfront'
         package: '$(Pipeline.Workspace)/drop'
