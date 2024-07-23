@@ -1,5 +1,5 @@
 trigger:
-- main
+- woelements
 
 pool:
   vmImage: 'ubuntu-latest'
